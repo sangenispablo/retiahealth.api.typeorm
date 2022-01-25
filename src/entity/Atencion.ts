@@ -1,5 +1,4 @@
-import { type } from 'os';
-import {Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn} from 'typeorm';
+import {Entity, Column, PrimaryGeneratedColumn, JoinColumn, OneToOne} from 'typeorm';
 import { Ambito } from './Ambito';
 
 
@@ -28,8 +27,8 @@ export class Atencion {
 	id_ambito: number;
 
     // Ahora voy a definir una relacion con Ambito
-    @ManyToOne(type=>Ambito)
-    @JoinColumn({name: "id_ambito", referencedColumnName: "denom_ambito"})
+    @OneToOne(type=>Ambito)
+    @JoinColumn()
     ambito: Ambito;
 
     @Column({type: "int4"})
