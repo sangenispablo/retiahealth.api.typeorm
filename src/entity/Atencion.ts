@@ -1,7 +1,8 @@
 import {Entity, Column, PrimaryGeneratedColumn, JoinColumn, OneToOne} from 'typeorm';
+
 import { Ambito } from './Ambito';
 import { Financiacion } from './Financiacion';
-
+import { ModeloAtencion } from './ModeloAtencion';
 
 @Entity({name: "atenciones", synchronize: false})
 export class Atencion {
@@ -26,14 +27,17 @@ export class Atencion {
 
     @Column({type: "int4"})
 	id_ambito: number;
-
-    // Ahora voy a definir una relacion con Ambito
+    
     @OneToOne(type=>Ambito)
     @JoinColumn({name: "id_ambito"})
     ambito: Ambito;
 
     @Column({type: "int4"})
 	id_modelo: number;
+
+    @OneToOne(type=>ModeloAtencion)
+    @JoinColumn({name: "id_modelo"})
+    modelo_atencion: ModeloAtencion;
 
     @Column({type: "int4"})
 	id_usuario: number;
