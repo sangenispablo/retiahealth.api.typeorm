@@ -1,10 +1,10 @@
 {
   "type": "postgres",
-  "host": "localhost",
+  "host": "rs-stage.cdzh6u4t59qr.us-west-2.rds.amazonaws.com",
   "port": 5432,
   "username": "postgres",
-  "password": "921616",
+  "password": "redsanitaria",
   "database": "rs_his",
   "entities": ["dist/entity/**/*.js"],
-  "synchronize": true
+  "synchronize": false
 }

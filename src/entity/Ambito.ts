@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({name: "ambito", synchronize: false})
 export class Ambito {
@@ -10,5 +10,4 @@ export class Ambito {
 
     @Column("varchar")
     abreviatura: string;
-    
 }
